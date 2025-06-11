@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auth Form</title>
+  <link rel="stylesheet" href="jud.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <form id="registerForm" class="form-container active">
+    <h1>Hello</h1>
+    <fieldset>
+      <legend>Your Full Name*</legend>
+      <input type="text" required>
+    </fieldset>
+    <fieldset>
+      <legend>Email*</legend>
+      <input type="email" required>
+    </fieldset>
+    <fieldset>
+      <legend id="password">Password*</legend>
+      <input type="password" required>
+    </fieldset>
+    <button type="submit">REGISTER</button>
+    <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+  </form>
+
+  <!-- Login Form -->
+  <form id="loginForm" class="form-container">
+    <h1>Welcome Back</h1>
+    <fieldset>
+      <legend>Email*</legend>
+      <input type="email" required>
+    </fieldset>
+    <fieldset>
+      <legend id="password">Password*</legend>
+      <input type="password" required>
+    </fieldset>
+    <button type="submit">LOGIN</button>
+    <p>Don't have an account? <a href="#" onclick="toggleForm('register')">Register</a></p>
+  </form>
+
+  <script>
+    function toggleForm(type) {
+      const registerForm = document.getElementById('registerForm');
+      const loginForm = document.getElementById('loginForm');
+
+      if (type === 'login') {
+        registerForm.classList.remove('active');
+        loginForm.classList.add('active');
+      } else {
+        loginForm.classList.remove('active');
+        registerForm.classList.add('active');
+      }
+    }
+  </script>
+
+</body>
+</html>
